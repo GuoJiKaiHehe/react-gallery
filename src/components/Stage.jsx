@@ -39,7 +39,7 @@ class Stage extends Component {
       }
 	}
 	rearrange(centerIndex){
-		var imgArrangeArr=this.state.imgArrangeArr,
+		let imgArrangeArr=this.state.imgArrangeArr,
 			Constant = this.Constant,
 			centerPos = Constant.centerPos,
 			hPosRange = Constant.hPosRange,
@@ -48,11 +48,11 @@ class Stage extends Component {
 			hPosRangeRightSecX = hPosRange.rightSecX,
 			vPosRangeTopY = vPosRange.topY,
 			vPosRangeX = vPosRange.x;
-		var imgsArrangeTopArr = [];
-		var  topImgNum = Math.floor(Math.random() * 2); //一半概率，可有可无；
-		var topImgSpliceIndex = 0;
+		let imgsArrangeTopArr = [];
+		let topImgNum = Math.floor(Math.random() * 2); //一半概率，可有可无；
+		let topImgSpliceIndex = 0;
 
-		var imgsArrangeCenterArr = imgArrangeArr.splice(centerIndex, 1);
+		let imgsArrangeCenterArr = imgArrangeArr.splice(centerIndex, 1);
 		 	imgsArrangeCenterArr[0] ={
 		      pos: centerPos,
 		      rotate : 0,
@@ -75,8 +75,8 @@ class Stage extends Component {
 	    	}
 	    });
 	    //布局左右两侧的图片
-    for (var i = 0, j = imgArrangeArr.length, k = j / 2; i < j; i++) {
-      var hPosRangeLORX = null; //左区域或者右区域的取值范围
+    for (let i = 0, j = imgArrangeArr.length, k = j / 2; i < j; i++) {
+      let hPosRangeLORX = null; //左区域或者右区域的取值范围
 
       //前半部分布局左边，右半部分布局右边
       if (i < k) {
@@ -141,7 +141,7 @@ class Stage extends Component {
 	}
 	inverse(index){
 		return function(){
-			var imgArrangeArr = this.state.imgArrangeArr;
+			let imgArrangeArr = this.state.imgArrangeArr;
 				imgArrangeArr[index].isInverse=!imgArrangeArr[index].isInverse;
 				this.setState({
 					imgArrangeArr:imgArrangeArr
